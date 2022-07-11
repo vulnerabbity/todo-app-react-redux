@@ -7,13 +7,13 @@ export function TodoListComponent() {
 
   return (
     <>
-      {state.todo.todoList.map(todo => (
-        <ul className="todo-list__list">
-          <li className="todo-list__list-item">
-            <TodoComponent todo={todo} key={todo.id}></TodoComponent>
+      <ul className="todo-list__list">
+        {state.todo.todoList.map(todo => (
+          <li className="todo-list__list-item" key={todo.id}>
+            <TodoComponent todo={todo}></TodoComponent>
           </li>
-        </ul>
-      ))}
+        ))}
+      </ul>
     </>
   )
 }
