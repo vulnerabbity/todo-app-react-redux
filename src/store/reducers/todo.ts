@@ -5,13 +5,17 @@ export interface TodoSate {
   todoList: ITodoModel[]
 }
 
-export function todoReducer(state: TodoSate = { todoList: [] }, action: AnyTodoAction) {
+export const initialTodoState: TodoSate = {
+  todoList: [],
+}
+
+export function todoReducer(state: TodoSate = initialTodoState, action: AnyTodoAction): TodoSate {
   const { todoList } = state
 
   const { type, payload } = action
 
   if (type === "ADD_TODO") {
-    return { ...state, todoList: [...todoList, payload.todo] }
+    return { ...state, todoList: [payload.todo, ...todoList] }
   }
 
   if (type === "DELETE_SINGLE_TODO") {
@@ -25,5 +29,15 @@ export function todoReducer(state: TodoSate = { todoList: [] }, action: AnyTodoA
     return { ...state, todoList: [] }
   }
 
-  if (type) return state
+  if (type === "SWITCH_TODO_COMPLETE") {
+    const item = state.todoList.find(todo => todo.id === payload.todoId)
+
+    if (item) {
+      item.isFinished = !item.isFinished
+    }
+
+    return { ...state }
+  }
+
+  return state
 }
