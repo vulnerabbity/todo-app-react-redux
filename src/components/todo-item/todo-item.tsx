@@ -1,6 +1,6 @@
-import { ITodoModel } from "../models/todo"
-import { ActionSwitchTodoComplete, ActionDeleteTodo } from "../store/actions/todo"
-import { accessStore } from "../store/store"
+import { ITodoModel } from "../../models/todo"
+import { ActionSwitchTodoComplete, ActionDeleteTodo } from "../../store/actions/todo"
+import { accessStore } from "../../store/store"
 import "./todo-item.scss"
 
 export interface TodoComponentProps {
