@@ -7,3 +7,33 @@
   padding: 0px 15rem;
   overflow: visible;
 }
+
+.flex {
+  display: flex;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.align-end {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
