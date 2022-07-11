@@ -1,5 +1,6 @@
 @import "./normalize.scss";
 @import "./zeroing.scss";
+@import "./theme.scss";
 
 body {
   margin: 0;
@@ -20,11 +21,20 @@ html {
 
 body {
   font-size: 16rem;
+  background-image: var(--background-gradient);
+  color: var(--color-primary);
 }
 
 a,
 button {
   display: block;
+  background: none;
+  border: none;
+  height: fit-content;
+  width: fit-content;
+
+  cursor: pointer;
+  color: var(--color-primary);
 }
 
 img {
