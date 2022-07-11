@@ -1,6 +1,7 @@
 import { ITodoModel } from "../models/todo"
 import { ActionSwitchTodoComplete, ActionDeleteTodo } from "../store/actions/todo"
 import { accessStore } from "../store/store"
+import "./todo-item.scss"
 
 export interface TodoComponentProps {
   todo: ITodoModel
@@ -18,18 +19,23 @@ export function TodoComponent({ todo }: TodoComponentProps) {
   }
 
   return (
-    <div>
-      <div>
-        <button onClick={completeSelf}>+</button>
+    <div className="todo-item">
+      <div className="todo-item__vertical-center">
+        <input
+          type="checkbox"
+          defaultChecked={todo.isFinished}
+          onClick={completeSelf}
+          aria-label="complete todo"
+        ></input>
       </div>
-      <div>
-        <p>{todo.title}</p>
-        <p>{todo.text}</p>
-        <p>{todo.id}</p>
-        <p>{String(todo.isFinished)}</p>
+      <div className="todo-item__content">
+        <p className="todo-item__title">{todo.title}</p>
+        <p className="todo-item__text">{todo.text}</p>
       </div>
-      <div>
-        <button onClick={deleteSelf}>X</button>
+      <div className="todo-item__vertical-center">
+        <button onClick={deleteSelf} aria-label="delete todo">
+          X
+        </button>
       </div>
     </div>
   )

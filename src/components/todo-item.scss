@@ -1,0 +1,29 @@
+.todo-item {
+  display: flex;
+
+  padding: 10rem;
+  background-color: var(--content);
+  border-radius: var(--border-radius-small);
+
+  &__vertical-center {
+    display: flex;
+    align-items: center;
+  }
+
+  &__content {
+    flex-grow: 1;
+    margin: 0 10rem;
+    > * {
+      margin-bottom: 10rem;
+    }
+  }
+
+  &__title {
+    font-size: 28rem;
+    font-weight: 700;
+  }
+
+  &__text {
+    font-size: 22rem;
+  }
+}
