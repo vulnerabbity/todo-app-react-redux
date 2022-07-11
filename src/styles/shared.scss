@@ -1,0 +1,15 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 15rem 25rem;
+
+  border-radius: var(--border-radius-small);
+
+  transition: var(--transition);
+
+  &:hover {
+    background-color: var(--content-inner-focus);
+  }
+}

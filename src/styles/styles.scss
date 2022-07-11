@@ -1,3 +1,4 @@
+@import "./shared.scss";
 @import "./normalize.scss";
 @import "./zeroing.scss";
 @import "./vars.scss";
@@ -20,6 +21,13 @@ html {
   font-size: 6.25%;
 }
 
+*,
+*::before,
+*::after {
+  color: inherit;
+  background: none;
+}
+
 body {
   font-size: 16rem;
   background-image: var(--background-gradient);
@@ -35,7 +43,10 @@ button {
   width: fit-content;
 
   cursor: pointer;
-  color: var(--color-primary);
+}
+
+input {
+  background: none;
 }
 
 img {
