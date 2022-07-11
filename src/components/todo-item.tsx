@@ -20,7 +20,7 @@ export function TodoComponent({ todo }: TodoComponentProps) {
 
   return (
     <div className="todo-item">
-      <div className="todo-item__vertical-center">
+      <div className="todo-item__vertical-center todo-item__column">
         <input
           type="checkbox"
           defaultChecked={todo.isFinished}
@@ -32,7 +32,7 @@ export function TodoComponent({ todo }: TodoComponentProps) {
         <p className="todo-item__title">{todo.title}</p>
         <p className="todo-item__text">{todo.text}</p>
       </div>
-      <div className="todo-item__vertical-center">
+      <div className="todo-item__vertical-center todo-item__column">
         <button onClick={deleteSelf} aria-label="delete todo">
           X
         </button>
