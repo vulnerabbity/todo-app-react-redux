@@ -1,11 +1,13 @@
 import { TodoModel } from "../../models/todo"
-import { IActionWithPayload } from "./interface"
+import { makeAction } from "./actions"
 
-type TodoPayload = { todo: TodoModel }
+export type AddTodoPayload = { todo: TodoModel }
+export type DeleteTodoPayload = { todoId: TodoModel["id"] }
 
-export class AddTodo implements IActionWithPayload {
-  readonly type = "ADD_TODO"
-  constructor(public readonly payload: TodoPayload) {}
-}
+export const ActionAddTodo = makeAction("ADD_TODO", (type: AddTodoPayload) => {})
+export const ActionDeleteTodo = makeAction("DELETE_SINGLE_TODO", (type: DeleteTodoPayload) => {})
+export const ActionDeleteAllTodo = makeAction("DELETE_ALL_TODO")
 
-export type AnyTodoAction = AddTodo
+export type AnyTodoAction = ReturnType<
+  typeof ActionAddTodo | typeof ActionDeleteTodo | typeof ActionDeleteAllTodo
+>
