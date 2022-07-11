@@ -1,5 +1,5 @@
-import { accessStore } from "../store/store"
-import { TodoComponent } from "./todo-item"
+import { accessStore } from "../../store/store"
+import { TodoComponent } from "../todo-item"
 import "./todo-list.scss"
 
 export function TodoListComponent() {
