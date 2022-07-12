@@ -1,14 +1,24 @@
 .todo-checkbox {
-  &__checked {
-    display: block;
-  }
-  &__unchecked {
-    display: block;
+  // hide browser checkbox
+  height: 0px;
+  width: 0px;
+  opacity: 0;
+
+  &__label {
+    > * {
+      position: absolute;
+      opacity: 1;
+      top: 50%;
+      transform: translateY(-50%);
+
+      transition: var(--transition);
+    }
   }
 }
 
 .todo-item {
   display: flex;
+  position: relative;
 
   padding: 10rem 20rem;
 
@@ -44,25 +54,21 @@
     margin: 10rem 0;
   }
 
-  &__checkbox {
-    display: none;
-  }
-
   &__checkbox + label {
     cursor: pointer;
 
     > .todo-checkbox__checked {
-      display: none;
+      opacity: 0;
     }
   }
 
   &__checkbox:checked + label {
     > .todo-checkbox__unchecked {
-      display: none;
+      opacity: 0;
     }
 
     > .todo-checkbox__checked {
-      display: block;
+      opacity: 1;
     }
   }
 }

@@ -21,7 +21,7 @@ export function TodoComponent({ todo }: TodoComponentProps) {
 
   return (
     <div className="todo-item">
-      <div className="todo-item__vertical-center todo-item__column">
+      <div className="todo-item__column">
         <input
           className="todo-item__checkbox todo-checkbox"
           id={todo.id}
@@ -30,7 +30,7 @@ export function TodoComponent({ todo }: TodoComponentProps) {
           onClick={completeSelf}
           aria-label="complete todo"
         ></input>
-        <label htmlFor={todo.id}>
+        <label className="todo-checkbox__label" htmlFor={todo.id}>
           <img
             className="todo-item__icon todo-checkbox__checked"
             src={Icons.checked}
@@ -48,7 +48,7 @@ export function TodoComponent({ todo }: TodoComponentProps) {
         <p className="todo-item__text">{todo.text}</p>
       </div>
       <div className="todo-item__vertical-center todo-item__column">
-        <button onClick={deleteSelf} aria-label="delete todo">
+        <button className="button button_square" onClick={deleteSelf} aria-label="delete todo">
           <img className="todo-item__icon" src={Icons.close} alt="close" />
         </button>
       </div>
