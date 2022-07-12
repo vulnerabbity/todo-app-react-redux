@@ -1,3 +1,4 @@
+import { Icons } from "../../assets/icons/icons"
 import { ITodoModel } from "../../models/todo"
 import { ActionSwitchTodoComplete, ActionDeleteTodo } from "../../store/actions/todo"
 import { accessStore } from "../../store/store"
@@ -22,19 +23,33 @@ export function TodoComponent({ todo }: TodoComponentProps) {
     <div className="todo-item">
       <div className="todo-item__vertical-center todo-item__column">
         <input
+          className="todo-item__checkbox todo-checkbox"
+          id={todo.id}
           type="checkbox"
           defaultChecked={todo.isFinished}
           onClick={completeSelf}
           aria-label="complete todo"
         ></input>
+        <label htmlFor={todo.id}>
+          <img
+            className="todo-item__icon todo-checkbox__checked"
+            src={Icons.checked}
+            alt="checked checkbox"
+          />
+          <img
+            className="todo-item__icon todo-checkbox__unchecked"
+            src={Icons.unchecked}
+            alt="unchecked checkbox"
+          />
+        </label>
       </div>
       <div className="todo-item__content">
-        <p className="todo-item__title">{todo.title}</p>
+        <h3 className="todo-item__title">{todo.title}</h3>
         <p className="todo-item__text">{todo.text}</p>
       </div>
       <div className="todo-item__vertical-center todo-item__column">
         <button onClick={deleteSelf} aria-label="delete todo">
-          X
+          <img className="todo-item__icon" src={Icons.close} alt="close" />
         </button>
       </div>
     </div>

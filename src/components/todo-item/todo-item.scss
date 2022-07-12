@@ -1,10 +1,28 @@
+.todo-checkbox {
+  &__checked {
+    display: block;
+  }
+  &__unchecked {
+    display: block;
+  }
+}
+
 .todo-item {
   display: flex;
 
-  padding: 10rem;
+  padding: 10rem 20rem;
 
   background-color: var(--content);
   border-radius: var(--border-radius-small);
+
+  &__icon {
+    height: 40rem;
+    width: 40rem;
+  }
+
+  &__column {
+    min-width: 40rem;
+  }
 
   &__vertical-center {
     display: flex;
@@ -13,22 +31,38 @@
 
   &__content {
     flex-grow: 1;
-    margin: 0 10rem;
-    > * {
-      margin-bottom: 10rem;
-    }
+    margin: 5rem 15rem;
   }
 
   &__title {
-    font-size: 28rem;
+    font-size: 40rem;
     font-weight: 700;
   }
 
   &__text {
     font-size: 22rem;
+    margin: 10rem 0;
   }
 
-  &__column {
-    padding: 0 20rem;
+  &__checkbox {
+    display: none;
+  }
+
+  &__checkbox + label {
+    cursor: pointer;
+
+    > .todo-checkbox__checked {
+      display: none;
+    }
+  }
+
+  &__checkbox:checked + label {
+    > .todo-checkbox__unchecked {
+      display: none;
+    }
+
+    > .todo-checkbox__checked {
+      display: block;
+    }
   }
 }
