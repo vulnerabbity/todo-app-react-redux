@@ -40,6 +40,9 @@
   }
 
   &__content {
+    display: flex;
+    align-items: center;
+
     flex-grow: 1;
     margin: 5rem 15rem;
   }
