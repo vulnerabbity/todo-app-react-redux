@@ -27,9 +27,17 @@ html {
   color: inherit;
   background: none;
 
-  white-space: normal;
+  // break long words
+  overflow-wrap: break-word;
   word-wrap: break-word;
-  overflow: hidden;
+  -ms-word-break: break-word;
+  word-break: break-word;
+
+  // add hyphens to long words
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 body {
