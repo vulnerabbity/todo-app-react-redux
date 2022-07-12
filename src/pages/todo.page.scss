@@ -1,0 +1,22 @@
+.todo-page {
+  &__container {
+  }
+
+  &__section {
+    margin: 10rem 0;
+  }
+
+  &__section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 15rem;
+  }
+
+  &__section-title {
+    font-size: 30rem;
+
+    max-width: fit-content;
+  }
+}
