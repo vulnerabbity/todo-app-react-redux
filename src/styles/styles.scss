@@ -23,7 +23,9 @@ html {
 
 *,
 *::before,
-*::after {
+*::after,
+::placeholder {
+  opacity: 1;
   color: inherit;
   background: none;
 
