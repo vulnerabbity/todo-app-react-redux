@@ -13,7 +13,7 @@
     background-color: var(--content-inner-focus);
   }
 
-  &:focus {
+  &:focus-visible {
     background-color: var(--content-inner-focus);
   }
 }
