@@ -12,4 +12,8 @@
   &:hover {
     background-color: var(--content-inner-focus);
   }
+
+  &:focus {
+    background-color: var(--content-inner-focus);
+  }
 }
