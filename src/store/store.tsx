@@ -2,12 +2,18 @@ import { ReactNode } from "react"
 import { createStore } from "redux"
 import { rootReducer } from "./reducers"
 import { Provider as ReduxProvider, useDispatch, useSelector } from "react-redux"
+import { AppStateLocalStorage } from "./store.localstorage"
 
 export function createRootStore() {
-  return createStore(rootReducer)
+  return createStore(rootReducer, AppStateLocalStorage.getFromStorage())
 }
 
 const store = createRootStore()
+
+// save on change
+store.subscribe(() => {
+  AppStateLocalStorage.save(store.getState())
+})
 
 export function RootStoreProvider({ children }: { children: ReactNode }) {
   return <ReduxProvider store={store}>{children}</ReduxProvider>
