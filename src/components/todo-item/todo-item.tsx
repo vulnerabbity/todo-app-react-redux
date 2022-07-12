@@ -45,7 +45,7 @@ export function TodoComponent({ todo }: TodoComponentProps) {
       </div>
       <div className="todo-item__content">
         <h3 className="todo-item__title">{todo.title}</h3>
-        <p className="todo-item__text">{todo.text}</p>
+        {todo.text && <p className="todo-item__text">{todo.text}</p>}
       </div>
       <div className="todo-item__vertical-center todo-item__column">
         <button className="button button_square" onClick={deleteSelf} aria-label="delete todo">
