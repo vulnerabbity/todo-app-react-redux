@@ -26,6 +26,10 @@ html {
 *::after {
   color: inherit;
   background: none;
+
+  white-space: normal;
+  word-wrap: break-word;
+  overflow: hidden;
 }
 
 body {
