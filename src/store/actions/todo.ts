@@ -12,10 +12,12 @@ export const ActionSwitchTodoComplete = makeAction(
   (type: CompleteTodoPayload) => {},
 )
 export const ActionDeleteAllTodo = makeAction("DELETE_ALL_TODO")
+export const ActionDeleteAllCompletedTodo = makeAction("DELETE_ALL_COMPLETED_TODO")
 
 export type AnyTodoAction = ReturnType<
   | typeof ActionAddTodo
   | typeof ActionDeleteTodo
   | typeof ActionDeleteAllTodo
   | typeof ActionSwitchTodoComplete
+  | typeof ActionDeleteAllCompletedTodo
 >

@@ -39,5 +39,11 @@ export function todoReducer(state: TodoSate = initialTodoState, action: AnyTodoA
     return { ...state }
   }
 
+  if (type === "DELETE_ALL_COMPLETED_TODO") {
+    const newTodoList = state.todoList.filter(todo => todo.isFinished === false)
+
+    return { ...state, todoList: newTodoList }
+  }
+
   return state
 }
