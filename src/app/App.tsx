@@ -1,16 +1,15 @@
 import "./App.css"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { TodoPage } from "../pages/todo.page"
+import { HeaderComponent } from "../components/header/header"
+import { RoutesList } from "../pages/routes"
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <header className="App-header"></header>
-        <Routes>
-          <Route path="/" element={<TodoPage></TodoPage>}></Route>
-        </Routes>
-      </div>
+      <HeaderComponent></HeaderComponent>
+      <Routes>
+        <Route {...RoutesList.home}></Route>
+      </Routes>
     </BrowserRouter>
   )
 }

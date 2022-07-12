@@ -1,0 +1,11 @@
+.header {
+  &__container {
+    min-height: 74rem;
+    display: flex;
+    justify-content: center;
+  }
+  &__logo {
+    font-size: 44rem;
+    font-weight: 600;
+  }
+}
